@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.Scanner;
+
 public class Titulo {
     private String nombre;
     private int fechaDeLanzamiento;
@@ -52,6 +54,33 @@ public class Titulo {
         return evaluacion;
     }
 
+    public void setEvaluacion(){
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Ingrese el puntaje otorgado por 3 usuarios: ");
+        double puntajeUsuario1 = 0;
+        double puntajeUsuario2 = 0;
+        double puntajeUsuario3 = 0;
+        double evaluacion;
+
+        for (int i=0; i<3; i++){
+            System.out.println("Puntaje del usuario " + i + " : ");
+            if (i==0){
+                puntajeUsuario1 = teclado.nextDouble();
+                teclado.nextLine();
+            } else if (i==1) {
+                puntajeUsuario2 = teclado.nextDouble();
+                teclado.nextLine();
+            }else{
+                puntajeUsuario3 = teclado.nextDouble();
+                teclado.nextLine();
+            }
+
+
+        }
+        evaluacion = (puntajeUsuario1 + puntajeUsuario2 + puntajeUsuario3)/3;
+        this.evaluacion = evaluacion;
+    }
+
 
 
     public void muestraFichaTecnica(){
@@ -66,6 +95,6 @@ public class Titulo {
         }else {
             System.out.println("No incluido en plan básico");
         }
-        System.out.println("Evaluación: " + evaluacion);
+        System.out.println("Evaluación: " + getEvaluacion());
     }
 }

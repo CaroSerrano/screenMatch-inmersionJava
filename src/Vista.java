@@ -74,6 +74,8 @@ public class Vista{
                     peliculaUsuario.setDirector(directorUsuario);
                     System.out.println();
 
+                    peliculaUsuario.setEvaluacion();
+
                     peliculaUsuario.muestraFichaTecnica();
                     break;
 
@@ -93,6 +95,13 @@ public class Vista{
                     int episodiosPorTemporadaUsuario = teclado.nextInt();
                     teclado.nextLine();
                     serieUsuario.setEpisodiosPorTemporada(episodiosPorTemporadaUsuario);
+
+                    System.out.println("Ingrese la duración en minutos de cada episodio (puede ser un promedio): ");
+                    int duracionEpisodioMinutosUsuario = teclado.nextInt();
+                    teclado.nextLine();
+                    serieUsuario.setDuracionEpisodioEnMinutos(duracionEpisodioMinutosUsuario);
+
+                    serieUsuario.setEvaluacion();
 
                     serieUsuario.muestraFichaTecnica();
                     break;
