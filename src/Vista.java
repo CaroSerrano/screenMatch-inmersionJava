@@ -3,8 +3,10 @@ import java.util.Scanner;
 import modelo.Pelicula;
 import modelo.Serie;
 import modelo.Titulo;
+import modelo.CalculadoraDeTiempo;
 
 public class Vista{
+    int tiempo = 0;
     public void setearDatosEnComun(Titulo titulo){
         Scanner teclado = new Scanner(System.in);
 
@@ -67,6 +69,7 @@ public class Vista{
                     int duracionUsuario = teclado.nextInt();
                     teclado.nextLine();
                     peliculaUsuario.setDuracionEnMinutos(duracionUsuario);
+                    tiempo = tiempo + duracionUsuario;
 
 
                     System.out.println("Ingrese el director de la película: ");
@@ -100,11 +103,16 @@ public class Vista{
                     int duracionEpisodioMinutosUsuario = teclado.nextInt();
                     teclado.nextLine();
                     serieUsuario.setDuracionEpisodioEnMinutos(duracionEpisodioMinutosUsuario);
+                    tiempo = tiempo + serieUsuario.getDuracionEnMinutos();
 
                     serieUsuario.setEvaluacion();
 
                     serieUsuario.muestraFichaTecnica();
                     break;
+
+                case 3:
+                    CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
+                    calculadora.calculaElTiempo(tiempo);
 
                 case 4:
                     System.out.println("Gracias por utilizar ScreenMatch. Esperamos vuelva pronto!");
