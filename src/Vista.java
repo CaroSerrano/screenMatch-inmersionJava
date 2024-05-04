@@ -113,6 +113,7 @@ public class Vista{
                 case 3:
                     CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
                     calculadora.calculaElTiempo(tiempo);
+                    break;
 
                 case 4:
                     System.out.println("Gracias por utilizar ScreenMatch. Esperamos vuelva pronto!");
