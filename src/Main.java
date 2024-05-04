@@ -1,42 +1,33 @@
-import java.util.Scanner;
+import modelo.Pelicula;
+import modelo.Serie;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Bienvenid@ a ScreenMatch");
+        Vista vista = new Vista();
 
-        //Declaración de variables
-        int fechaDeLanzamiento = 1999;
-        double evaluacion = 4.5;
-        boolean incluidoEnPlanBasico = true;
-        String nombre = "Matrix";
-        String sinopsis = """
-                La mejor película del fin de milenio
-                
-                """;
-        double mediaEvaluacionUsuario = 0;
+    /*    Pelicula matrix = new Pelicula();
+        matrix.setNombre("Matrix");
+        matrix.setDuracionEnMinutos(120);
+        matrix.setFechaDeLanzamiento(1999);
 
-        System.out.println("Pelicula: " + nombre);
-        System.out.println("Fecha de lanzamiento: " + fechaDeLanzamiento);
-        System.out.println(evaluacion);
-        System.out.println(incluidoEnPlanBasico);
+        matrix.muestraFichaTecnica();
+        System.out.println();
 
-        if (fechaDeLanzamiento >= 2023){
-            System.out.println("Película popular en el momento");
-        }  else {
-            System.out.println("Película retro que vale la pena ver");
-        }
+        Pelicula elResplandor = new Pelicula();
+        elResplandor.setNombre("El resplandor");
+        elResplandor.setDuracionEnMinutos(146);
+        elResplandor.setFechaDeLanzamiento(1980);
+        elResplandor.setSinopsis("Jack Torrance se traslada con su mujer y su hijo de siete años al impresionante hotel Overlook, en Colorado, para encargarse del mantenimiento de las instalaciones durante la temporada invernal, época en la que permanece cerrado y aislado por la nieve. Su objetivo es encontrar paz y sosiego para escribir una novela. Sin embargo, poco después de su llegada al hotel, al mismo tiempo que Jack empieza a padecer inquietantes trastornos de personalidad, se suceden extraños y espeluznantes fenómenos paranormales");
+        elResplandor.setIncluidoEnPlanBasico(true);
 
-        for (int i = 0; i < 3; i++) {
-            Scanner teclado = new Scanner(System.in);
-            System.out.println("Ingresa la evaluación que le darías a Matrix");
-            double notaMatrix = teclado.nextDouble();
-            mediaEvaluacionUsuario = mediaEvaluacionUsuario + notaMatrix;
-        }
-        System.out.println("La media de la evaluación de la pelicula Matrix es: "
-                + mediaEvaluacionUsuario/3);
+        elResplandor.muestraFichaTecnica();
 
-
-
-
+        Serie friends = new Serie();
+        friends.setNombre("Friends");
+        friends.setFechaDeLanzamiento(1996);
+        friends.setTemporadas(10);
+        friends.setEpisodiosPorTemporada(22);
+        friends.setDuracionEpisodioEnMinutos(30);
+        friends.muestraFichaTecnica();*/
     }
 }
