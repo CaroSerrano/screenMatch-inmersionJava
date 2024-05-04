@@ -55,6 +55,7 @@ public class Titulo {
 
 
     public void muestraFichaTecnica(){
+        System.out.println();
         System.out.println("**** FICHA TÉCNICA ****");
         System.out.println("Nombre del título: " + nombre);
         System.out.println("Fecha de lanzamiento: " + fechaDeLanzamiento);

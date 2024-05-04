@@ -1,9 +1,7 @@
-import modelo.Pelicula;
-import modelo.Serie;
-
 public class Main {
     public static void main(String[] args) {
         Vista vista = new Vista();
+        vista.muestraElMenu();
 
     /*    Pelicula matrix = new Pelicula();
         matrix.setNombre("Matrix");
