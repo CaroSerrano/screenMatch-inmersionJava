@@ -62,12 +62,12 @@ public class Titulo {
         double puntajeUsuario3 = 0;
         double evaluacion;
 
-        for (int i=0; i<3; i++){
+        for (int i=1; i<4; i++){
             System.out.println("Puntaje del usuario " + i + " : ");
-            if (i==0){
+            if (i==1){
                 puntajeUsuario1 = teclado.nextDouble();
                 teclado.nextLine();
-            } else if (i==1) {
+            } else if (i==2) {
                 puntajeUsuario2 = teclado.nextDouble();
                 teclado.nextLine();
             }else{
