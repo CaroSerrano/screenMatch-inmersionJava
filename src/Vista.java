@@ -7,7 +7,59 @@ import modelo.CalculadoraDeTiempo;
 
 public class Vista{
     int tiempo = 0;
-    public void setearDatosEnComun(Titulo titulo){
+    private void crearPelicula(){
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("*** Registrando una nueva película ***");
+        System.out.println();
+
+        Pelicula peliculaUsuario= new Pelicula();
+        setearDatosEnComun(peliculaUsuario);
+
+        System.out.println("Ingrese la duración en minutos de la película: ");
+        int duracionUsuario = teclado.nextInt();
+        teclado.nextLine();
+        peliculaUsuario.setDuracionEnMinutos(duracionUsuario);
+        tiempo = tiempo + duracionUsuario;
+
+
+        System.out.println("Ingrese el director de la película: ");
+        String directorUsuario = teclado.nextLine();
+        peliculaUsuario.setDirector(directorUsuario);
+        System.out.println();
+
+        peliculaUsuario.setEvaluacion();
+
+        peliculaUsuario.muestraFichaTecnica();
+    }
+    private void crearSerie(){
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("*** Registrando una nueva serie ***");
+        System.out.println();
+
+        Serie serieUsuario = new Serie();
+        setearDatosEnComun(serieUsuario);
+
+        System.out.println("Ingrese el número de temporadas de la serie: ");
+        int numeroTemporadasUsuario = teclado.nextInt();
+        teclado.nextLine();
+        serieUsuario.setTemporadas(numeroTemporadasUsuario);
+
+        System.out.println("Ingrese el número de episodios por temporada de la serie: ");
+        int episodiosPorTemporadaUsuario = teclado.nextInt();
+        teclado.nextLine();
+        serieUsuario.setEpisodiosPorTemporada(episodiosPorTemporadaUsuario);
+
+        System.out.println("Ingrese la duración en minutos de cada episodio (puede ser un promedio): ");
+        int duracionEpisodioMinutosUsuario = teclado.nextInt();
+        teclado.nextLine();
+        serieUsuario.setDuracionEpisodioEnMinutos(duracionEpisodioMinutosUsuario);
+        tiempo = tiempo + serieUsuario.getDuracionEnMinutos();
+
+        serieUsuario.setEvaluacion();
+
+        serieUsuario.muestraFichaTecnica();
+    }
+    private void setearDatosEnComun(Titulo titulo){
         Scanner teclado = new Scanner(System.in);
 
         System.out.println("Ingrese el nombre del título: ");
@@ -59,55 +111,11 @@ public class Vista{
 
             switch (opcion){
                 case 1:
-                    System.out.println("*** Registrando una nueva película ***");
-                    System.out.println();
-
-                    Pelicula peliculaUsuario= new Pelicula();
-                    setearDatosEnComun(peliculaUsuario);
-
-                    System.out.println("Ingrese la duración en minutos de la película: ");
-                    int duracionUsuario = teclado.nextInt();
-                    teclado.nextLine();
-                    peliculaUsuario.setDuracionEnMinutos(duracionUsuario);
-                    tiempo = tiempo + duracionUsuario;
-
-
-                    System.out.println("Ingrese el director de la película: ");
-                    String directorUsuario = teclado.nextLine();
-                    peliculaUsuario.setDirector(directorUsuario);
-                    System.out.println();
-
-                    peliculaUsuario.setEvaluacion();
-
-                    peliculaUsuario.muestraFichaTecnica();
+                    crearPelicula();
                     break;
 
                 case 2:
-                    System.out.println("*** Registrando una nueva serie ***");
-                    System.out.println();
-
-                    Serie serieUsuario = new Serie();
-                    setearDatosEnComun(serieUsuario);
-
-                    System.out.println("Ingrese el número de temporadas de la serie: ");
-                    int numeroTemporadasUsuario = teclado.nextInt();
-                    teclado.nextLine();
-                    serieUsuario.setTemporadas(numeroTemporadasUsuario);
-
-                    System.out.println("Ingrese el número de episodios por temporada de la serie: ");
-                    int episodiosPorTemporadaUsuario = teclado.nextInt();
-                    teclado.nextLine();
-                    serieUsuario.setEpisodiosPorTemporada(episodiosPorTemporadaUsuario);
-
-                    System.out.println("Ingrese la duración en minutos de cada episodio (puede ser un promedio): ");
-                    int duracionEpisodioMinutosUsuario = teclado.nextInt();
-                    teclado.nextLine();
-                    serieUsuario.setDuracionEpisodioEnMinutos(duracionEpisodioMinutosUsuario);
-                    tiempo = tiempo + serieUsuario.getDuracionEnMinutos();
-
-                    serieUsuario.setEvaluacion();
-
-                    serieUsuario.muestraFichaTecnica();
+                   crearSerie();
                     break;
 
                 case 3:
